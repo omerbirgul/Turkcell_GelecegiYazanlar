@@ -16,8 +16,10 @@ public class StarbucksCustomerManager extends BaseCustomerManager
 
     @Override
     public void save(Customer customer) {
+        if(_customerCheckService.checkIfRealPerson(customer)){
+            super.save(customer);
+        }
 
-        super.save(customer);
     }
 
 
